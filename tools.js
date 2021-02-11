@@ -93,7 +93,7 @@ function print_menu()
 function print_footer()
 {
 	const footer = "<div id='phone'><a href='tel://0506411478'>טל להזמנות: 0506411478</a></div>"+
-				 "<div id='email'><a href='mailto:info@oshrit.com'>info@oshrit.com</a></div>"+
+				 "<div id='email'><a href='mailto:oshrit.lerner@gmail.com'>oshrit.lerner@gmail.com</a></div>"+
 				 "<div id='facebook'><a  target='_blank' href='https://www.facebook.com/pages/%D7%90%D7%95%D7%A9%D7%A8%D7%99%D7%AA-%D7%9C%D7%A8%D7%A0%D7%A8-%D7%9E%D7%90%D7%A4%D7%A8%D7%AA/255545934483547'>חפשו אותי בפייסבוק<img src='facebook.gif'></a></div>";
 	$("#footer").html(footer);
 }
