@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script type="text/javascript" src="http://malsup.github.com/chili-1.7.pack.js"></script>
+	<script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="tools.js">	</script>
+	<link href="style.css" rel="stylesheet">
+	<link rel="icon" href="favicon.ico">
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body bgcolor="#660066" >
+
+
+	<div class='main' id='main' dir='rtl'>
+		<div id='background'></div>
+		<div id='title'><img src='title.gif'></div>
+		<div id="menu_buttons"></div>
+		<div id="contact_me">
+		<div id="page_title">גלריות</div>
+		<div id ="gallery_menu_buttons"></div>
+		<div id='pics_continer'>
+			<div id='gallery_buttons'></div>
+			<div class = 'gallery_nav' id='gallery_nav_next'>
+				<div class = 'nav_pic'>
+					<img id='next_img' src='./nav/next.gif' width='60px'/>
+				</div>
+				<div class ='nav_text' id='nav_text_next'>
+					המשך
+				</div>
+			</div>
+			<div class = 'gallery_nav' id='gallery_nav_back'>
+				<div class = 'nav_pic'>
+					<img id='back_img' src='./nav/back.gif' width='60px'/>
+				</div>
+				<div class ='nav_text' id='nav_text_back'>
+					חזור
+				</div>
+			</div>
+		</div>
+		<div id='footer'></div>
+	</div>
+
+
+		<div class = 'photo_presentation close_photo' id="photo_background"></div>
+
+<div class='photo_presentation' id="photos_gallery2">
+	<div id="mask_gallery"></div>
+		<div id="photo_gallery">
+			<img id = "photo_src" src="../gallery/k/k01.jpg" height= "600px">
+		</div>
+		<div class="photo_gallery">
+			<img id="frame_gallery_src" src="frame-gallery.gif" height= "600px">
+		</div>
+
+		<div  id="gallery_next">
+			<a id="next_link" href ="javascript:void;">
+				<img src="next_photo.gif">
+			</a>
+		</div>
+			<div id="gallery_back">
+				<a id="back_link" href ="javascript:void();">
+					<img src="back_photo.gif">
+				</a>
+			</div>
+
+	<div class = 'close_photo' id="close_gallery">
+		<img src="close.gif">
+	</div>
+</div>
+
+<script>
+	$( document ).ready(function() {
+		$('.close_photo').click(function(){close_photo();});
+		print_menu();
+		print_footer();
+		print_gallery_menu();
+		load_gallery('k', 1);
+		init_nav();
+		$('.link').click(function(){$('.link').removeClass('selected'); $(this).addClass('selected');})
+	});
+	$("body").keyup(function(e) {
+		if(e.which === 37 && $('.photo_presentation').css('visibility') === 'visible' && current_presented>1)
+			return show_image(current_type, current_presented-1);
+		if(e.which == 39 && $('.photo_presentation').css('visibility') === 'visible' &&  current_presented<counters[current_type])
+			return show_image(current_type, current_presented+1);
+		if(e.which == 27 && $('.photo_presentation').css('visibility') === 'visible' )
+				return close_photo();
+
+
+	});
+</script>
+
+
+</body>
+</html>
